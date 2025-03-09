@@ -17,7 +17,7 @@ fun main() {
 /**
  * Returns the waypoint with the highest altitude.
  * @param waypoints the list of waypoints
- * @return the waypoint with the highest altitude
+ * @return the farthes waypoint from the start and the maximum distance from the start
  */
 fun maxDistanceFromStart(waypoints: List<Waypoint>, earthRadius: Double): Pair<Waypoint, Double> {
     val start = waypoints.first()
@@ -54,8 +54,7 @@ fun waypointsOutsideGeofence(
     geofenceCenterLongitude: Double,
     geofenceRadiusKm: Double,
     earthRadius: Double
-): Pair<List<Waypoint>, Int> {
-    var count = 0
+): List<Waypoint> {
     val outsideGeofence = mutableListOf<Waypoint>()
     for (waypoint in waypoints) {
         val distance = haversine(
@@ -66,11 +65,10 @@ fun waypointsOutsideGeofence(
             earthRadius
         )
         if (distance > geofenceRadiusKm) {
-            count++
             outsideGeofence.add(waypoint)
         }
     }
-    return Pair(outsideGeofence, count)
+    return outsideGeofence
 }
 
 
