@@ -24,3 +24,7 @@ dist-ssr
 *.sw?
 /.gradle/
 /build/
+
+
+#config files
+/RoutesAnalyzer/src/main/resources/*
