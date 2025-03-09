@@ -17,7 +17,7 @@ fun main() {
 /**
  * Returns the waypoint with the highest altitude.
  * @param waypoints the list of waypoints
- * @return the farthes waypoint from the start and the maximum distance from the start
+ * @return the farthest waypoint from the start and the maximum distance from the start
  */
 fun maxDistanceFromStart(waypoints: List<Waypoint>, earthRadius: Double): Pair<Waypoint, Double> {
     val start = waypoints.first()
